@@ -3,7 +3,7 @@
 Free posts is a web based application that allows users to add and views posts created by other users. 
 A user can add a post, comment and like a post. The posts have different variations ranging from articles, poems, jokes, stories, quotes, to spiritual quotes. 
 ## Running the application 
-The project uses an API created from a backend server on this link.....
+The project uses an API created from a backend server on this link: [server setup](https://github.com/chibukasia/public-posts-server)
 
 To run this application on your computer, you will have to first clone and run the backend provided in the link above. Then clone this repository into your computer and run the follwing commands: 
 
