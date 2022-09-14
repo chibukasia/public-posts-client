@@ -1,20 +1,22 @@
 import React, { useState, useEffect } from "react";
 import Comment from "./comment";
 import AddComment from "./addComment";
+import useGetMethod from "./getHook";
 
 function Reactions ({postId, comments, commentsData, setComments, title, content, author, category, likes, updatePostLikes, posts, setPosts}){
 
     const [showComments, setShowComments] = useState(false) 
     const [showCommentForm, setShowCommentForm] = useState(false)
-    const[users, setUsers] = useState([])
+    // const[users, setUsers] = useState([])
     const [like, setLike] = useState(likes)
 
     // Get users from the server
-    useEffect(()=>{
-        fetch("http://localhost:9292/users")
-        .then(res=>res.json())
-        .then(data=>setUsers(data))
-    },[])
+    const {data: users, setData: setUsers} = useGetMethod("http://localhost:9292/users")
+    // useEffect(()=>{
+    //     fetch("http://localhost:9292/users")
+    //     .then(res=>res.json())
+    //     .then(data=>setUsers(data))
+    // },[])
 
     // select a random user
     const userIDs = users.map(user=>user.id)

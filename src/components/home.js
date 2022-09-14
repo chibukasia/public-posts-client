@@ -7,10 +7,12 @@ import { useState, useEffect } from "react";
 
 function Home() {
   const [posts, setPosts] = useState([]);
-  const [comments, setComments] = useState([]);
+  // const [comments, setComments] = useState([]);
   const [category, setCategory] = useState("all");
 
-  const url = "http://localhost:9292/posts"
+  const url = "http://localhost:9292/comments"
+  // const {posts, setPosts} = useGetMethod(url)
+  const{data: comments, setData: setComments} = useGetMethod(url)
 
   
   useEffect(() => {
@@ -19,11 +21,11 @@ function Home() {
       .then((data) => setPosts(data));
   }, [comments]);
 
-  useEffect(() => {
-    fetch("http://localhost:9292/comments")
-      .then((res) => res.json())
-      .then((data) => setComments(data));
-  }, []);
+  // useEffect(() => {
+  //   fetch("http://localhost:9292/comments")
+  //     .then((res) => res.json())
+  //     .then((data) => setComments(data));
+  // }, []);
 
   return (
     <div className="App">
